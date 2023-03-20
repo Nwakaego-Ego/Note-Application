@@ -1,6 +1,145 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+} */
+
+:root {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: #ebebeb;
+  padding-top: 0;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-bottom: 60px;
+  padding-right: 40px;
+}
+
+.navbtn {
+  /* margin: 20px; */
+}
+
+.signout {
+  margin: 20px;
+  background: #414141;
+  border-radius: 5px;
+  color: white;
+
+  width: 70px;
+  height: 25px;
+}
+
+.btn-jo {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #faa603;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.mid-section {
+  width: 95%;
+  height: 200px;
+  /* border: 1px solid red; */
+  position: relative;
+  left: 20px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+input {
+  width: 90%;
+  height: 110px;
+  position: relative;
+  left: 50px;
+  top: 30px;
+  background: #ececec;
+  border-radius: 4px;
+  border: 1px solid transparent;
+}
+
+.mid-section-bottom {
+  display: flex;
+  position: relative;
+  top: 30px;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-left: 45px;
+  padding-bottom: 20px;
+  padding-right: 65px;
+  font-size: 13px;
+}
+
+.btn-save {
+  position: relative;
+  top: 17px;
+  background: #4e9d9a;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid transparent;
+
+  width: 70px;
+  height: 30px;
+}
+
+.bottom {
+  width: 92%;
+  height: 130px;
+  position: relative;
+  left: 20px;
+  margin-top: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.name {
+  margin: 10px;
+  /* color: black; */
+}
+
+.note {
+  color: black;
+}
+
+.delete-update-btn {
+  display: flex;
+}
+
+.delete {
+  position: relative;
+  top: 12px;
+  background: #de4040;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  width: 70px;
+  height: 30px;
+  font-size: 13px;
+}
+
+.update {
+  position: relative;
+  left: 10px;
+  top: 12px;
+  background-color: #414141;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  width: 70px;
+  height: 30px;
 }
