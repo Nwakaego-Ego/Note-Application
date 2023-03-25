@@ -1,36 +1,18 @@
-import { useState } from "react";
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import "./App.css";
+import Dashboard from "./Pages/Dashboard/Dashboard";
+import Login from "./Pages/Login/Login";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <div className="navbar">
-        <h3>Diary</h3>
-        <div className="navbtn">
-          <button className="signout">Sign out</button>
-          <button className="btn-jo">JO</button>
-        </div>
-      </div>
-      <div className="mid-section">
-        <input type="text" id="name" className="input-text" />
-        <div class="mid-section-bottom">
-          <p>1/300</p>
-          <button class="btn-save">save</button>
-        </div>
-      </div>
-      <div className="bottom">
-        <button className="btn-jo">JO</button>
-        <small className="name">Jibola Orija</small>
-        <p className="note">I am tired, I really need a vacation</p>
-        <div className="delete-update-btn">
-          <button className="delete">Delete</button>
-          <button className="update">Update</button>
-        </div>
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/main" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

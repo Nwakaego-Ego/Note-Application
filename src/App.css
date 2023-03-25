@@ -22,10 +22,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-bottom: 60px;
-  padding-right: 40px;
+  margin-bottom: 30px;
 }
 
 .navbtn {
@@ -52,35 +49,33 @@ body {
 }
 
 .mid-section {
-  width: 95%;
+  /* width: 100%; */
   height: 200px;
-  /* border: 1px solid red; */
-  position: relative;
-  left: 20px;
   background-color: #ffffff;
   border-radius: 5px;
+
+  padding-top: 47px;
+  padding-right: 33px;
+  padding-left: 33px;
+  padding-bottom: 23px;
 }
 
-input {
-  width: 90%;
+.input-text {
+  width: 100%;
   height: 110px;
-  position: relative;
-  left: 50px;
-  top: 30px;
   background: #ececec;
   border-radius: 4px;
   border: 1px solid transparent;
+  padding-top: 10px;
+  text-indent: 15px;
 }
 
 .mid-section-bottom {
   display: flex;
-  position: relative;
-  top: 30px;
+  /* position: relative;
+  top: 30px; */
   justify-content: space-between;
-  padding-top: 0;
-  padding-left: 45px;
-  padding-bottom: 20px;
-  padding-right: 65px;
+
   font-size: 13px;
 }
 
@@ -96,7 +91,7 @@ input {
   height: 30px;
 }
 
-.bottom {
+.Hero-bottom {
   width: 92%;
   height: 130px;
   position: relative;
