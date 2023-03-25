@@ -1,15 +1,23 @@
 import React from "react";
+import { useNavigate } from "react-router";
 
 import "./Login.css";
 import SignIn from "../../Components/SignIn";
 
 const Login = () => {
+  const navigate = useNavigate();
+
+  function Signup() {
+    navigate("/signup");
+  }
   return (
     <div className="login">
       <div className="navbar">
         <h3>Diary</h3>
         <div className="navbtn">
-          <button className="signout login-signin">Sign in</button>
+          <button className="signout login-signin" onClick={Signup}>
+            Sign up
+          </button>
         </div>
       </div>
       <div></div>

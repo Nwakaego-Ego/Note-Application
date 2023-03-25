@@ -54,7 +54,10 @@ function SignIn() {
         </div>
       </form>
       <button className="login-button" onClick={loginBtn}>
-        <Link to="/main"> Login into your account</Link>
+        <Link to="/main" className="login-link">
+          {" "}
+          Login into your account
+        </Link>
       </button>
       <p className="login-account">
         Dont have any account ? <span className="login-sign-up">Sign up</span>{" "}

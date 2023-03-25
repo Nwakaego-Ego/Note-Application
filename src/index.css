@@ -88,6 +88,11 @@
   border: 1px solid transparent;
 }
 
+.login-link {
+  text-decoration: none;
+  color: #ffffff;
+}
+
 .login-account {
   margin-top: 8px;
   /* margin-bottom: 67px; */
