@@ -1,0 +1,18 @@
+body {
+  overflow: hidden;
+}
+
+.login-main-page {
+  display: flex;
+  justify-content: space-between;
+}
+
+.login-main {
+  margin-top: 100px;
+  margin-bottom: 431px;
+}
+
+.login-signin {
+  background-color: #4e9d9a !important;
+  border: 1px solid transparent;
+}
