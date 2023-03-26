@@ -32,7 +32,12 @@ function SignIn() {
               <label for="password">Password</label>
             </div>
             <div className="login-password-password">
-              <span className="login-forget-password">Forget Password</span>
+              <span className="login-forget-password">
+                <Link to="/forgetpassword" className="signup-link">
+                  {" "}
+                  Forget Password
+                </Link>
+              </span>
             </div>
           </div>
           <input
@@ -60,7 +65,12 @@ function SignIn() {
         </Link>
       </button>
       <p className="login-account">
-        Dont have any account ? <span className="login-sign-up">Sign up</span>{" "}
+        Dont have any account ?{" "}
+        <span className="login-sign-up">
+          <Link to="/signup" className="signup-link">
+            Sign up
+          </Link>
+        </span>{" "}
       </p>
     </div>
   );

@@ -6,3 +6,16 @@
 .signup-main {
   margin-top: 35px;
 }
+
+.signup-form-section {
+  height: 521px;
+}
+
+.signup-img {
+  margin-top: 100px;
+}
+
+.signup-link {
+  text-decoration: none;
+  color: #4e9d9a;
+}

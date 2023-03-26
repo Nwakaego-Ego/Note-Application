@@ -5,6 +5,7 @@ import "./App.css";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
+import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/main" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/forgetpassword" element={<ForgetPassword />} />
       </Routes>
     </BrowserRouter>
   );
