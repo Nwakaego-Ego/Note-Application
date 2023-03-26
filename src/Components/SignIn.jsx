@@ -19,12 +19,13 @@ function SignIn() {
           <div className="login-email-label">
             <label for="email">Email address</label>
           </div>
-          <textarea
+          <input
             type="email"
             id="email"
             name="email"
             className="login-email-input"
-          ></textarea>
+            placeholder="name@example.com"
+          ></input>
         </div>
         <div className="login-password">
           <div className="password">

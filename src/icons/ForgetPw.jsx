@@ -129,3 +129,5 @@ function ForgetPw() {
     </div>
   );
 }
+
+export default ForgetPw;
