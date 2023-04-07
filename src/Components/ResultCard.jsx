@@ -8,9 +8,12 @@ function ResultCard(props) {
       <small className="name">{props.name}</small>
       <p className="note">{props.note}</p>
       <div className="delete-update-btn">
-        {/* <button className="delete">Delete</button> */}
-        <Delete />
-        <Edit />
+        <button onClick={props.openDelModal}>
+          <Delete />
+        </button>
+        <button className="remove-btn-style" onClick={props.openModal}>
+          <Edit />
+        </button>
       </div>
     </div>
   );
