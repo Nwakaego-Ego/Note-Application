@@ -11,6 +11,10 @@ const Delete = (props) => {
     },
   };
 
+  // const btnDel = () => {
+  //   isDel;
+  // };
+
   return (
     <div>
       <Modal
@@ -26,8 +30,8 @@ const Delete = (props) => {
           <button className="btn-save no-del">No, go back</button>
           <button
             className="btn-save yes-del"
-            onClick={() => {
-              props.isDel;
+            OnClick={() => {
+              closeDelModal;
             }}
           >
             Yes, delete note
