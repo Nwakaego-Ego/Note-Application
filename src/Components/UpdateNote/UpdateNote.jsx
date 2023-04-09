@@ -22,7 +22,14 @@ const UpdateNote = (props) => {
       >
         <div style={{ display: "flex", justifyContent: "space-between" }}>
           <h3>Edit Note</h3>
-          <p style={{ color: "red" }}> X </p>
+          <button
+            onClick={() => {
+              props.closeModal();
+            }}
+          >
+            {" "}
+            X{" "}
+          </button>
         </div>
 
         <div className="mid-section">
