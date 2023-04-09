@@ -8,7 +8,12 @@ function ResultCard(props) {
       <small className="name">{props.name}</small>
       <p className="note">{props.note}</p>
       <div className="delete-update-btn">
-        <button onClick={props.openDelModal}>
+        <button
+          onClick={() => {
+            props.openDelModal();
+            props.setSelected(props.id);
+          }}
+        >
           <Delete />
         </button>
         <button className="remove-btn-style" onClick={props.openModal}>

@@ -11,10 +11,6 @@ const Delete = (props) => {
     },
   };
 
-  // const btnDel = () => {
-  //   props.closeDelModal;
-  // };
-
   return (
     <div>
       <Modal
@@ -35,7 +31,14 @@ const Delete = (props) => {
           >
             No, go back
           </button>
-          <button className="btn-save yes-del">Yes, delete note</button>
+          <button
+            className="btn-save yes-del"
+            onClick={() => {
+              props.delNote();
+            }}
+          >
+            Yes, delete note
+          </button>
         </div>
       </Modal>
     </div>

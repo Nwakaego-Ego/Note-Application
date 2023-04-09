@@ -6,12 +6,12 @@ import Del from "../../Components/UpdateNote/Del";
 import "./Dashboard.css";
 
 function Dashboard() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState("");
   const [isOpen, setOpenModal] = useState(false);
   const [note, setNote] = useState("");
   const [isDel, setisDel] = useState(false);
   const [error, setError] = useState("");
-  const [placeholder, setPlaceholder] = useState("");
+  const [selected, setSelected] = useState({});
 
   const openDelModal = () => {
     setisDel(true);
@@ -38,8 +38,19 @@ function Dashboard() {
       setError("the input box cannot be empty");
       return;
     }
-    setNotes([...notes, { id: Math.random, name: "Jibola", note: note }]);
+    setNotes([...notes, { id: notes.length + 1, name: "Jibola", note: note }]);
     setError("");
+    setNote("");
+  };
+
+  const delNotes = () => {
+    setNotes("");
+  };
+
+  const delNote = () => {
+    let newNotes = notes.filter((el) => el.id !== selected);
+    setNotes(newNotes);
+    closeDelModal();
   };
 
   return (
@@ -73,15 +84,20 @@ function Dashboard() {
                 {...data}
                 openModal={openModal}
                 openDelModal={openDelModal}
+                setSelected={setSelected}
               />
-              ;
             </div>
           );
         })
       )}
       <div>
         <UpdateNote modalOpen={isOpen} closeModal={closeModal} />
-        <Del closeDelModal={closeDelModal} isDel={isDel} />
+        <Del
+          closeDelModal={closeDelModal}
+          isDel={isDel}
+          delNotes={delNotes}
+          delNote={delNote}
+        />
       </div>
     </div>
   );
