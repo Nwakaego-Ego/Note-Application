@@ -6,6 +6,7 @@ import Dashboard from "./Pages/Dashboard/Dashboard";
 import Login from "./Pages/Login/Login";
 import Signup from "./Pages/Signup/Signup";
 import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
+import Test from "./Pages/Test";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/main" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
+        <Route path="/test" element={<Test />} />
       </Routes>
     </BrowserRouter>
   );
