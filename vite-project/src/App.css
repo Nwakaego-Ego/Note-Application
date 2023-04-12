@@ -1,6 +1,161 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #ebebeb;
+  padding-top: 0;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  /* height: 100vh; */
+  /* overflow-y: hidden; */
+  /* min-height: 0; */
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.navbtn {
+  /* margin: 20px; */
+}
+
+.signout {
+  margin: 20px;
+  background: #414141;
+  border-radius: 5px;
+  color: white;
+
+  width: 112px;
+  height: 40px;
+  font-size: 16px;
+}
+
+.btn-jo {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #faa603;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.mid-section {
+  /* width: 100%; */
+  height: 200px;
+  background-color: #ffffff;
+  border-radius: 5px;
+
+  padding-top: 47px;
+  padding-right: 33px;
+  padding-left: 33px;
+  padding-bottom: 23px;
+}
+
+.input-text {
+  width: 100%;
+  height: 110px;
+  background: #ececec;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  padding-top: 10px;
+  text-indent: 15px;
+}
+
+.mid-section-bottom {
+  display: flex;
+  /* position: relative;
+  top: 30px; */
+  justify-content: space-between;
+
+  font-size: 13px;
+}
+
+.btn-save {
+  position: relative;
+  top: 17px;
+  background: #4e9d9a;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid transparent;
+
+  width: 70px;
+  height: 30px;
+}
+
+.Hero-bottom {
+  /* width: 100%; */
+  height: 130px;
+  /* position: relative;
+  left: 20px; */
+  margin-top: 40px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.name {
+  margin: 10px;
+  /* color: black; */
+}
+
+.note {
+  color: black;
+}
+
+.delete-update-btn {
+  display: flex;
+  gap: 16px;
+}
+
+.delete {
+  position: relative;
+  top: 12px;
+  background: #de4040;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  width: 70px;
+  height: 30px;
+  font-size: 13px;
+}
+
+.update {
+  position: relative;
+  left: 10px;
+  top: 12px;
+  background-color: #414141;
+  color: white;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  width: 70px;
+  height: 30px;
+}
+
+.remove-btn-style {
+  all: unset;
+}
+
+.del-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.no-del {
+  border: 1px solid #4e9d9a;
+  background-color: white;
+  color: #4e9d9a;
+}
+
+.yes-del {
+  background-color: #de4040;
+  color: white;
 }
