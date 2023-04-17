@@ -1,13 +1,20 @@
+import React, { useState } from "react";
 import "../index.css";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function SignIn() {
   const navigate = useNavigate();
+  const [reveal, setReveal] = useState(false);
 
   function loginBtn() {
     navigate("/main");
   }
+
+  const showPw = () => {
+    setReveal(!reveal);
+  };
+
   return (
     <div className="login-form-section">
       <div className="login-sign-in">Sign in</div>
@@ -42,7 +49,7 @@ function SignIn() {
             </div>
           </div>
           <input
-            type="password"
+            type={reveal ? "text" : "password"}
             id="password"
             className="login-password-input"
           ></input>
@@ -51,10 +58,11 @@ function SignIn() {
               type="checkbox"
               id="checkbox"
               className="login-checkbox-input"
+              onClick={showPw}
             />
             <label for="checkbox" className="checkbox">
               {" "}
-              Show Password
+              {reveal ? "Hide" : "Show Password"}
             </label>
           </div>
         </div>
