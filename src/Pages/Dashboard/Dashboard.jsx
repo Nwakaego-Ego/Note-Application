@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../Components/Header";
 import ResultCard from "../../Components/ResultCard";
 import UpdateNote from "../../Components/UpdateNote/UpdateNote";
 import Del from "../../Components/UpdateNote/Del";
 import "./Dashboard.css";
+import axios from "axios";
 
 function Dashboard() {
   const [notes, setNotes] = useState("");
@@ -52,6 +53,31 @@ function Dashboard() {
     setNotes(newNotes);
     closeDelModal();
   };
+
+  const fetchData = () => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        console.log(data);
+      });
+  };
+
+  const fetchData2 = async () => {
+    try {
+      const response = await axios.get(
+        "https://jsonplaceholder.typicode.com/posts"
+      );
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchData2();
+  }, []);
 
   return (
     <div className="App">
