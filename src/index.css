@@ -1,6 +1,6 @@
 .login-form-section {
   width: 610px;
-  height: 421px;
+  height: 451px;
   background: #ffffff;
   border-radius: 5px;
   padding: 60px;
@@ -19,7 +19,7 @@
   font-size: 12px;
   line-height: 18px;
   color: #414141;
-  margin-bottom: 45px;
+  margin-bottom: 35px;
 }
 
 .login-email-label {
@@ -37,6 +37,8 @@
   border-radius: 5px;
   text-indent: 15px;
   border: 1px solid transparent;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .password {
@@ -104,4 +106,25 @@
 
 .login-sign-up {
   color: #4e9d9a;
+}
+
+/* NEW */
+
+.signup-password-forget {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signup-form-section {
+  height: 771px;
+}
+
+.error-message {
+  color: red;
+}
+
+.error-reveal {
+  color: red;
+  font-size: 12px;
+  border: 1px solid red;
 }

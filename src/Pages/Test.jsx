@@ -16,16 +16,6 @@ const Test = () => {
       .required("password cannot be empty"),
   });
 
-  const validate = (value) => {
-    try {
-      schema.validateSync({
-        name: value,
-      });
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const initialValues = { name: "", email: "", password: "" };
 
   return (
