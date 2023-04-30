@@ -6,14 +6,27 @@ import * as yup from "yup";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import "../../index.css";
 import { useState } from "react";
+import * as services from "../../Services/AuthService";
+import toast from "react-hot-toast";
 
 function Signup() {
   const navigate = useNavigate();
   const [showPassword, setshowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  function loginBtn() {
-    navigate("/main");
-  }
+  const register = async (data) => {
+    const { email, name, password } = data;
+    try {
+      setLoading(true);
+      let response = await services.registerUser(name, password, email);
+      toast.success(`${response?.message} Please sign in now`);
+      navigate("/");
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      toast.error(error?.response?.data?.message);
+    }
+  };
 
   function signinPage() {
     navigate("/");
@@ -66,7 +79,7 @@ function Signup() {
               initialValues={initialValues}
               validationSchema={schema}
               onSubmit={(data) => {
-                console.log(data);
+                register(data);
               }}
             >
               {({ isValid, dirty }) => (
@@ -96,6 +109,7 @@ function Signup() {
                         <ErrorMessage name="email">{(msg) => msg}</ErrorMessage>
                       </div>
                     </div>
+
                     <div>
                       <div className="signup-password-forget">
                         <label for="password">Password</label>
@@ -135,14 +149,10 @@ function Signup() {
 
                     <button
                       type="submit"
-                      disabled={!isValid}
+                      disabled={!isValid || loading}
                       className="login-button"
-                      onClick={loginBtn}
                     >
-                      <Link to="/main" className="login-link">
-                        {" "}
-                        Create your account
-                      </Link>{" "}
+                      {loading ? "Please wait" : "Create your account"}
                     </button>
                   </div>
                 </Form>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseUrl = "https://note-api-q17l.onrender.com/api";
+const baseUrl = "https://note-test-api.onrender.com/api";
 
 export const registerUser = async (username, password, email) => {
   let data = {
@@ -8,9 +8,15 @@ export const registerUser = async (username, password, email) => {
     password: password,
     email: email,
   };
-  try {
-    await axios.post(`${baseUrl}/users/register`, data);
-  } catch (error) {
-    console.log(error);
-  }
+  const response = await axios.post(`${baseUrl}/users/register`, data);
+  return response.data;
+};
+
+export const loginUser = async (email, password) => {
+  let data = {
+    password: password,
+    email: email,
+  };
+  const response = await axios.post(`${baseUrl}/users/login`, data);
+  return response.data;
 };

@@ -4,7 +4,6 @@ import ResultCard from "../../Components/ResultCard";
 import UpdateNote from "../../Components/UpdateNote/UpdateNote";
 import Del from "../../Components/UpdateNote/Del";
 import "./Dashboard.css";
-import axios from "axios";
 
 function Dashboard() {
   const [notes, setNotes] = useState("");
@@ -54,34 +53,12 @@ function Dashboard() {
     closeDelModal();
   };
 
-  const fetchData = () => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(function (response) {
-        return response.json();
-      })
-      .then(function (data) {
-        console.log(data);
-      });
-  };
-
-  const fetchData2 = async () => {
-    try {
-      const response = await axios.get(
-        "https://jsonplaceholder.typicode.com/posts"
-      );
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  useEffect(() => {
-    fetchData2();
-  }, []);
+  let userData = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div className="App">
       <Header />
+      <h2>Welcome {userData?.username}</h2>
       <div className="mid-section">
         <textarea
           type="text"
