@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../Components/Header";
 import ResultCard from "../../Components/ResultCard";
 import UpdateNote from "../../Components/UpdateNote/UpdateNote";
@@ -53,9 +53,12 @@ function Dashboard() {
     closeDelModal();
   };
 
+  let userData = JSON.parse(localStorage.getItem("user"));
+
   return (
     <div className="App">
       <Header />
+      <h2>Welcome {userData?.username}</h2>
       <div className="mid-section">
         <textarea
           type="text"

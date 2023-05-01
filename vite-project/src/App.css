@@ -159,3 +159,7 @@ body {
   background-color: #de4040;
   color: white;
 }
+
+button:disabled {
+  cursor: not-allowed;
+}
