@@ -4,6 +4,8 @@ import ResultCard from "../../Components/ResultCard";
 import UpdateNote from "../../Components/UpdateNote/UpdateNote";
 import Del from "../../Components/UpdateNote/Del";
 import "./Dashboard.css";
+import toast from "react-hot-toast";
+import * as services from "../services/notesService";
 
 function Dashboard() {
   const [notes, setNotes] = useState("");
@@ -12,6 +14,18 @@ function Dashboard() {
   const [isDel, setisDel] = useState(false);
   const [error, setError] = useState("");
   const [selected, setSelected] = useState({});
+  const [submitNotes, setSubmitNotes] = useState(false);
+
+  // const createNotes = async (data) => {
+  //   try {
+  //     setSubmitNotes(true);
+  //     let response = await services.userNote(createNotes);
+  //     toast.success(`${response?.message} Note created`);
+  //   } catch (error) {
+  //     setSubmitNotes(false);
+  //     toast.error(error?.response?.data?.message);
+  //   }
+  // };
 
   const openDelModal = () => {
     setisDel(true);
@@ -33,14 +47,18 @@ function Dashboard() {
     setNote(e.target.value);
   };
 
-  const saveNote = () => {
+  const saveNote = async () => {
     if (note === "") {
       setError("the input box cannot be empty");
       return;
     }
-    setNotes([...notes, { id: notes.length + 1, name: "Jibola", note: note }]);
-    setError("");
-    setNote("");
+    try {
+      res = await services.createNote(note);
+      toast.success(res.message);
+      setNote("");
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   const delNotes = () => {

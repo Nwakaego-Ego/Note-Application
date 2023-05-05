@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const baseUrl = "https://note-test-api.onrender.com/api";
+import { baseUrl } from "./utils";
 
 export const registerUser = async (username, password, email) => {
   let data = {
