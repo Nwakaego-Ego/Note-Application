@@ -19,6 +19,7 @@ function Signup() {
     try {
       setLoading(true);
       let response = await services.registerUser(name, password, email);
+      // console.log(response);
       toast.success(`${response?.message} Please sign in now`);
       navigate("/");
       setLoading(false);

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Header from "../../Components/Header";
 import ResultCard from "../../Components/ResultCard";
 import UpdateNote from "../../Components/UpdateNote/UpdateNote";
 import Del from "../../Components/UpdateNote/Del";
 import "./Dashboard.css";
 import toast from "react-hot-toast";
-import * as services from "../services/notesService";
+import * as services from "../../Services/noteServices";
 
 function Dashboard() {
   const [notes, setNotes] = useState("");
@@ -15,17 +15,6 @@ function Dashboard() {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState({});
   const [submitNotes, setSubmitNotes] = useState(false);
-
-  // const createNotes = async (data) => {
-  //   try {
-  //     setSubmitNotes(true);
-  //     let response = await services.userNote(createNotes);
-  //     toast.success(`${response?.message} Note created`);
-  //   } catch (error) {
-  //     setSubmitNotes(false);
-  //     toast.error(error?.response?.data?.message);
-  //   }
-  // };
 
   const openDelModal = () => {
     setisDel(true);
@@ -61,8 +50,15 @@ function Dashboard() {
     }
   };
 
-  const delNotes = () => {
+  const delNotes = async () => {
     setNotes("");
+    try {
+      response = await services.deleteNote(id);
+      toast.success(res.message);
+      setNote("");
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
   };
 
   const delNote = () => {
