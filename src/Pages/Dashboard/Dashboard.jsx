@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../Components/Header";
 import ResultCard from "../../Components/ResultCard";
 import UpdateNote from "../../Components/UpdateNote/UpdateNote";
@@ -15,6 +15,7 @@ function Dashboard() {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState({});
   const [submitNotes, setSubmitNotes] = useState(false);
+  const [del, setDel] = useState("");
 
   const openDelModal = () => {
     setisDel(true);
@@ -36,21 +37,43 @@ function Dashboard() {
     setNote(e.target.value);
   };
 
+  // Function to fetch notes
+
+  const getNotes = async () => {
+    try {
+      let response = await services.getNotes();
+      toast.success(response?.message);
+      setNotes(response?.data);
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
+  };
+
+  // Get notes on component mount
+
+  useEffect(() => {
+    getNotes();
+  }, []);
+
+  // Function to create note
+
   const saveNote = async () => {
     if (note === "") {
       setError("the input box cannot be empty");
       return;
     }
     try {
-      res = await services.createNote(note);
-      toast.success(res.message);
+      let response = await services.createNote(note);
+      toast.success(response?.message);
+      getNotes();
       setNote("");
     } catch (error) {
-      toast.error(error.response.data.message);
+      console.log(error);
+      toast.error(error?.response?.data?.message);
     }
   };
 
-  const delNotes = async () => {
+  const delNote = async () => {
     setNotes("");
     try {
       response = await services.deleteNote(id);
@@ -61,10 +84,14 @@ function Dashboard() {
     }
   };
 
-  const delNote = () => {
-    let newNotes = notes.filter((el) => el.id !== selected);
-    setNotes(newNotes);
-    closeDelModal();
+  const delNotes = async () => {
+    try {
+      let response = await services.get(id);
+      toast.success(response?.message);
+      setDel("");
+    } catch (error) {
+      toast.error(error?.response?.data?.message);
+    }
   };
 
   let userData = JSON.parse(localStorage.getItem("user"));
@@ -113,7 +140,7 @@ function Dashboard() {
           closeDelModal={closeDelModal}
           isDel={isDel}
           delNotes={delNotes}
-          delNote={delNote}
+          delNote={delNotes}
         />
       </div>
     </div>

@@ -13,6 +13,7 @@ function ResultCard(props) {
             props.openDelModal();
             props.setSelected(props.id);
           }}
+          className="remove-btn-style"
         >
           <Delete />
         </button>

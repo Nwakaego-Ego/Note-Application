@@ -3,10 +3,12 @@ import axios from "axios";
 
 const userData = JSON.parse(localStorage.getItem("user"));
 
+console.log(userData);
+
 //header obj
 let config = {
   headers: {
-    Authorization: `Bearer ${userData?.token}`,
+    Authorization: `Bearer ${userData?.accessToken}`,
   },
 };
 
