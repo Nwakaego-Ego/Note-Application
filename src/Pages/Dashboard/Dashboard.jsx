@@ -17,9 +17,12 @@ function Dashboard() {
   const [submitNotes, setSubmitNotes] = useState(false);
   const [del, setDel] = useState("");
 
-  const openDelModal = () => {
+  const openDelModal = (id) => {
     setisDel(true);
+    setSelected(id);
   };
+
+  console.log(selected);
 
   const closeDelModal = () => {
     setisDel(false);
@@ -73,23 +76,25 @@ function Dashboard() {
     }
   };
 
-  const delNote = async () => {
-    setNotes("");
-    try {
-      response = await services.deleteNote(id);
-      toast.success(res.message);
-      setNote("");
-    } catch (error) {
-      toast.error(error.response.data.message);
-    }
-  };
+  // const delNote = async () => {
+  //   setNotes("");
+  //   try {
+  //     response = await services.deleteNote(id);
+  //     toast.success(res.message);
+  //     setNote("");
+  //   } catch (error) {
+  //     toast.error(error.response.data.message);
+  //   }
+  // };
 
-  const delNotes = async () => {
+  const delNote = async () => {
     try {
-      let response = await services.get(id);
+      let response = await services.deleteNote(selected);
       toast.success(response?.message);
-      setDel("");
+      getNotes();
+      closeDelModal();
     } catch (error) {
+      console.log(error);
       toast.error(error?.response?.data?.message);
     }
   };
@@ -128,7 +133,7 @@ function Dashboard() {
                 {...data}
                 openModal={openModal}
                 openDelModal={openDelModal}
-                setSelected={setSelected}
+                selected={selected}
               />
             </div>
           );
@@ -139,8 +144,9 @@ function Dashboard() {
         <Del
           closeDelModal={closeDelModal}
           isDel={isDel}
-          delNotes={delNotes}
-          delNote={delNotes}
+          ariaHideApp={false}
+          delNote={delNote}
+          // deleteNote={deleteNote}
         />
       </div>
     </div>

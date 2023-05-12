@@ -34,8 +34,3 @@ export const deleteNote = async (id) => {
   const response = await axios.delete(`${baseUrl}/notes/${id}`, config);
   return response.data;
 };
-
-// export const getSingleNote = async () => {
-//   const response = await axios.get(`${baseUrl}/notes`, data);
-//   return response.data;
-// };

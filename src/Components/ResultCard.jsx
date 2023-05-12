@@ -1,5 +1,6 @@
 import Edit from "../icons/Edit";
 import Delete from "../icons/Delete";
+import Dashboard from "../Pages/Dashboard/Dashboard";
 
 function ResultCard(props) {
   return (
@@ -10,8 +11,7 @@ function ResultCard(props) {
       <div className="delete-update-btn">
         <button
           onClick={() => {
-            props.openDelModal();
-            props.setSelected(props.id);
+            props.openDelModal(props._id);
           }}
           className="remove-btn-style"
         >
