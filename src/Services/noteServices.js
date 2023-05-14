@@ -3,7 +3,7 @@ import axios from "axios";
 
 const userData = JSON.parse(localStorage.getItem("user"));
 
-console.log(userData);
+// console.log(userData);
 
 //header obj
 let config = {
@@ -25,8 +25,12 @@ export const getNotes = async () => {
   return response.data;
 };
 
-export const updateNote = async (data, id) => {
+export const updateNote = async (note, id) => {
+  let data = {
+    note: note,
+  };
   const response = await axios.put(`${baseUrl}/notes/${id}`, data, config);
+
   return response.data;
 };
 

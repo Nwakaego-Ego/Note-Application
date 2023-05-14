@@ -1,8 +1,8 @@
 import Edit from "../icons/Edit";
 import Delete from "../icons/Delete";
-import Dashboard from "../Pages/Dashboard/Dashboard";
 
 function ResultCard(props) {
+  // console.log(props);
   return (
     <div className="Hero-bottom">
       <button className="btn-jo">JO</button>
@@ -17,7 +17,12 @@ function ResultCard(props) {
         >
           <Delete />
         </button>
-        <button className="remove-btn-style" onClick={props.openModal}>
+        <button
+          className="remove-btn-style"
+          onClick={() => {
+            props.openModal(props._id);
+          }}
+        >
           <Edit />
         </button>
       </div>

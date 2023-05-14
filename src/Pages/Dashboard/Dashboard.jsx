@@ -14,26 +14,28 @@ function Dashboard() {
   const [isDel, setisDel] = useState(false);
   const [error, setError] = useState("");
   const [selected, setSelected] = useState({});
-  const [submitNotes, setSubmitNotes] = useState(false);
-  const [del, setDel] = useState("");
+  const [filtered, setFiltered] = useState([]);
 
   const openDelModal = (id) => {
     setisDel(true);
     setSelected(id);
   };
 
-  console.log(selected);
+  // console.log(selected);
 
   const closeDelModal = () => {
     setisDel(false);
   };
 
-  const openModal = () => {
+  const openModal = (id) => {
     setOpenModal(true);
+    let singleNote = notes.filter((item) => item._id === id);
+    setFiltered(singleNote);
   };
 
   const closeModal = () => {
     setOpenModal(false);
+    setFiltered([]);
   };
 
   const handleChange = (e) => {
@@ -47,6 +49,7 @@ function Dashboard() {
       let response = await services.getNotes();
       toast.success(response?.message);
       setNotes(response?.data);
+      // console.log(response);
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
@@ -71,21 +74,12 @@ function Dashboard() {
       getNotes();
       setNote("");
     } catch (error) {
-      console.log(error);
+      // console.log(error);
       toast.error(error?.response?.data?.message);
     }
   };
 
-  // const delNote = async () => {
-  //   setNotes("");
-  //   try {
-  //     response = await services.deleteNote(id);
-  //     toast.success(res.message);
-  //     setNote("");
-  //   } catch (error) {
-  //     toast.error(error.response.data.message);
-  //   }
-  // };
+  //  Function to delete Resultcard
 
   const delNote = async () => {
     try {
@@ -133,6 +127,7 @@ function Dashboard() {
                 {...data}
                 openModal={openModal}
                 openDelModal={openDelModal}
+                // updateUserNote={updateUserNote}
                 selected={selected}
               />
             </div>
@@ -140,7 +135,12 @@ function Dashboard() {
         })
       )}
       <div>
-        <UpdateNote modalOpen={isOpen} closeModal={closeModal} />
+        <UpdateNote
+          modalOpen={isOpen}
+          closeModal={closeModal}
+          filtered={filtered}
+          getNotes={getNotes}
+        />
         <Del
           closeDelModal={closeDelModal}
           isDel={isDel}
