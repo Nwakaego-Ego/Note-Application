@@ -1,0 +1,27 @@
+.update-editNote {
+}
+
+.update-exit-edit-note {
+  font-family: "Poppins", sans-serif;
+  width: 112px;
+  height: 40px;
+  background: #4e9d9a;
+  border-radius: 5px;
+  font-weight: 400;
+  font-size: 14px;
+  /* line-height: 21px; */
+  color: #ffffff;
+  border: 1px solid transparent;
+  margin-top: 20px;
+}
+
+.btn-save {
+  width: 112px;
+  height: 40px;
+}
+
+.update-exit-frame {
+  display: flex;
+  justify-content: space-between;
+  width: 574px;
+}

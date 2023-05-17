@@ -15,6 +15,7 @@ function Dashboard() {
   const [error, setError] = useState("");
   const [selected, setSelected] = useState({});
   const [filtered, setFiltered] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   const openDelModal = (id) => {
     setisDel(true);
@@ -31,6 +32,7 @@ function Dashboard() {
     setOpenModal(true);
     let singleNote = notes.filter((item) => item._id === id);
     setFiltered(singleNote);
+    console.log(singleNote);
   };
 
   const closeModal = () => {
@@ -118,7 +120,7 @@ function Dashboard() {
       </div>
 
       {notes.length < 1 ? (
-        <div>Please add a note</div>
+        <div className="please-add-note">Please add note</div>
       ) : (
         notes.map((data) => {
           return (
@@ -127,7 +129,6 @@ function Dashboard() {
                 {...data}
                 openModal={openModal}
                 openDelModal={openDelModal}
-                // updateUserNote={updateUserNote}
                 selected={selected}
               />
             </div>

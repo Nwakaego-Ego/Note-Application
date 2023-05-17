@@ -2,15 +2,17 @@ import React, { useState } from "react";
 import Modal from "react-modal";
 import toast from "react-hot-toast";
 import * as services from "../../Services/noteServices";
+import "./UpdateNote.css";
 
 const UpdateNote = (props) => {
-  // C
   const [single, setSingle] = useState();
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setSingle(e.target.value);
   };
+
+  // Function to update note
 
   const updateUserNote = async () => {
     try {
@@ -46,15 +48,16 @@ const UpdateNote = (props) => {
         onRequestClose={props.closeModal}
         style={customStyles}
       >
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <h3>Edit Note</h3>
+        <div className="update-exit-frame">
+          <h3 className="update-edit-note">Edit Note</h3>
           <button
+            className="update-exit-edit-note"
             onClick={() => {
               props.closeModal();
             }}
           >
             {" "}
-            X{" "}
+            Exit Note{" "}
           </button>
         </div>
 
