@@ -13,7 +13,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="navbar">
-        <h3>Diary</h3>
+        <h3 className="diary">Diary</h3>
         <div className="navbtn">
           <button className="signout login-signin" onClick={Signup}>
             Sign up

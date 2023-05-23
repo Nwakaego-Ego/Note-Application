@@ -16,6 +16,7 @@ function Dashboard() {
   const [selected, setSelected] = useState({});
   const [filtered, setFiltered] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [searchText, setSearchText] = useState("");
 
   const openDelModal = (id) => {
     setisDel(true);
@@ -60,8 +61,10 @@ function Dashboard() {
   // Get notes on component mount
 
   useEffect(() => {
-    getNotes();
-  }, []);
+    if (searchText === "") {
+      getNotes();
+    }
+  }, [searchText]);
 
   // Function to create note
 
@@ -95,12 +98,29 @@ function Dashboard() {
     }
   };
 
+  // Function for search
+
+  const searchNote = async () => {
+    try {
+      setLoading(true);
+      let response = await services.search(searchText);
+      toast.success(response?.message);
+      setNotes(response?.data);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      console.log(error);
+      toast.error(error?.response?.data?.message);
+    }
+  };
+
   let userData = JSON.parse(localStorage.getItem("user"));
 
   return (
     <div className="App">
       <Header />
-      <h2>Welcome {userData?.username}</h2>
+      <h2 className="username">Welcome {userData?.username}</h2>
+
       <div className="mid-section">
         <textarea
           type="text"
@@ -118,6 +138,18 @@ function Dashboard() {
           </button>
         </div>
       </div>
+
+      <input
+        type="text"
+        id="text"
+        name="text"
+        className="search-box"
+        onChange={(e) => setSearchText(e.target.value)}
+        placeholder="Search Note Here"
+      />
+      <button onClick={() => searchNote()} disabled={loading}>
+        {loading ? "Searching" : "Search"}
+      </button>
 
       {notes.length < 1 ? (
         <div className="please-add-note">Please add note</div>

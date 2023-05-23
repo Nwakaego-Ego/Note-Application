@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router";
-
+import "./Header.css";
 function Header() {
   const navigate = useNavigate();
 
@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <div className="navbar">
-      <h3>Diary</h3>
+      <h3 className="diary">Diary</h3>
       <div className="navbtn">
         <button className="signout" onClick={signinPage}>
           Sign Out

@@ -1,0 +1,14 @@
+.del-main {
+  /* background: #c3dddc; */
+  color: rgb(65, 62, 62);
+}
+
+.no-del {
+  background: #4e9d9a;
+  color: white;
+}
+
+.yes-del {
+  background: #4e9d9a;
+  color: white;
+}

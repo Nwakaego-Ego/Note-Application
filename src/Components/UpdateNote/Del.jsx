@@ -1,4 +1,5 @@
 import Modal from "react-modal";
+import "./Del.css";
 
 const Delete = (props) => {
   const customStyles = {
@@ -8,37 +9,41 @@ const Delete = (props) => {
       right: "auto",
       bottom: "auto",
       transform: "translate(-50%, -50%)",
+      background: "c3dddc",
+      color: "white",
     },
   };
 
   return (
-    <div>
+    <div className="del-main-box">
       <Modal
         isOpen={props.isDel}
         onRequestClose={props.closeDelModal}
         style={customStyles}
       >
-        <div>
-          <h3>Are you sure you want to delete this note</h3>
-        </div>
+        <div className="del-main">
+          <div>
+            <h3>Are you sure you want to delete this note</h3>
+          </div>
 
-        <div className="mid-section del-btn">
-          <button
-            className="btn-save no-del"
-            onClick={() => {
-              props.closeDelModal();
-            }}
-          >
-            No, go back
-          </button>
-          <button
-            className="btn-save yes-del"
-            onClick={() => {
-              props.delNote();
-            }}
-          >
-            Yes, delete note
-          </button>
+          <div className="mid-section del-btn">
+            <button
+              className="btn-save no-del"
+              onClick={() => {
+                props.closeDelModal();
+              }}
+            >
+              No, go back
+            </button>
+            <button
+              className="btn-save yes-del"
+              onClick={() => {
+                props.delNote();
+              }}
+            >
+              Delete note
+            </button>
+          </div>
         </div>
       </Modal>
     </div>

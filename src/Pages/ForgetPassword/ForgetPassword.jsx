@@ -45,11 +45,13 @@ const ForgetPassword = () => {
                 ></input>
               </div>
             </form>
-            <button className="login-button">
-              <Link to={"/reset"} className="reset">
-                Submit
-              </Link>
-            </button>
+            <div className="div-login-btn">
+              <button className="login-button">
+                <Link to={"/reset"} className="reset">
+                  Submit
+                </Link>
+              </button>
+            </div>
             <p className="login-account">
               Go back to sign up{" "}
               <span className="login-sign-up">

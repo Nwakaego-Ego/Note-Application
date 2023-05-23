@@ -38,3 +38,8 @@ export const deleteNote = async (id) => {
   const response = await axios.delete(`${baseUrl}/notes/${id}`, config);
   return response.data;
 };
+
+export const search = async (text) => {
+  const response = await axios.get(`${baseUrl}/notes?search=${text}`, config);
+  return response.data;
+};
