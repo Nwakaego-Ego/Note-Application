@@ -1,9 +1,11 @@
 import { useNavigate } from "react-router";
 import "./Header.css";
-function Header() {
+
+function Header(props) {
   const navigate = useNavigate();
 
   const signinPage = () => {
+    localStorage.clear();
     navigate("/");
   };
 

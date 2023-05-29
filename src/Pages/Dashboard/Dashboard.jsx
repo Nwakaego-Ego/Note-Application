@@ -52,7 +52,6 @@ function Dashboard() {
       let response = await services.getNotes();
       toast.success(response?.message);
       setNotes(response?.data);
-      // console.log(response);
     } catch (error) {
       toast.error(error?.response?.data?.message);
     }
@@ -79,7 +78,6 @@ function Dashboard() {
       getNotes();
       setNote("");
     } catch (error) {
-      // console.log(error);
       toast.error(error?.response?.data?.message);
     }
   };
@@ -114,11 +112,18 @@ function Dashboard() {
     }
   };
 
+  // const delUserData = () => {
+  //   setUserData("");
+  //   console.log(userData);
+  // };
+  // console.log(userData);
+
   let userData = JSON.parse(localStorage.getItem("user"));
+  // console.log(userData);
 
   return (
     <div className="App">
-      <Header />
+      <Header userData={userData} />
       <h2 className="username">Welcome {userData?.username}</h2>
 
       <div className="mid-section">

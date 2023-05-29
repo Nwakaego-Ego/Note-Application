@@ -9,18 +9,21 @@ import ForgetPassword from "./Pages/ForgetPassword/ForgetPassword";
 import Test from "./Pages/Test";
 import Reset from "./Pages/Reset/Reset";
 import User from "./User/User";
+import PrivateRoute from "./PrivateRoutes/PrivateRoute";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/main" element={<Dashboard />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/forgetpassword" element={<ForgetPassword />} />
         <Route path="/test" element={<Test />} />
         <Route path="/reset" element={<Reset />} />
         <Route path="/user" element={<User />} />
+        <Route element={<PrivateRoute />}>
+          <Route path="/main" element={<Dashboard />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   );
