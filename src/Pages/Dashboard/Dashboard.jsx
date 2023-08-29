@@ -112,17 +112,37 @@ function Dashboard() {
     }
   };
 
-  // const delUserData = () => {
-  //   setUserData("");
-  //   console.log(userData);
-  // };
-  // console.log(userData);
-
   let userData = JSON.parse(localStorage.getItem("user"));
   // console.log(userData);
 
+  let currentMode = "light";
+
+  const setDarkMode = () => {
+    document.querySelector("body").setAttribute("data-theme", "dark");
+    currentMode = "dark";
+  };
+
+  const setLightMode = () => {
+    document.querySelector("body").setAttribute("data-theme", "light");
+    currentMode = "light";
+  };
+
+  // if (event.type === "click")
+
+  const toggleButton = (event) => {
+    // if (event.type === "click" && toggleButton === "light") {
+    if (currentMode === "light") {
+      setDarkMode();
+    } else {
+      setLightMode();
+    }
+  };
+
   return (
-    <div className="App">
+    <div className="app">
+      <button onClick={toggleButton} className="mode">
+        DarkMode
+      </button>
       <Header userData={userData} />
       <h2 className="username">Welcome {userData?.username}</h2>
 
