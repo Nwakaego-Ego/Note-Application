@@ -12,11 +12,6 @@
   color: #ffffff;
 }
 
-[data-theme="light"] {
-  background-color: #ffffff;
-  color: #1a1a1a;
-}
-
 button {
   font-family: "Poppins", sans-serif;
 }
