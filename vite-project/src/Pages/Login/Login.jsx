@@ -11,7 +11,7 @@ const Login = () => {
     navigate("/signup");
   }
   return (
-    <div className="login">
+    <div className="login overflow-hidden">
       <div className="navbar">
         <h3>Diary</h3>
         <div className="navbtn">
@@ -24,7 +24,7 @@ const Login = () => {
       <div className="login-main-page">
         <div>
           <div className="login-main">
-            <div className="login-img">
+            <div className="login-img hidden lg:block">
               <svg
                 width="473"
                 height="328"

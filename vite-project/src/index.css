@@ -1,6 +1,10 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 .login-form-section {
   width: 610px;
-  height: 451px;
+  height: 551px;
   background: #ffffff;
   border-radius: 5px;
   padding: 60px;
@@ -108,7 +112,6 @@
   color: #4e9d9a;
 }
 
-/* NEW */
 
 .signup-password-forget {
   display: flex;

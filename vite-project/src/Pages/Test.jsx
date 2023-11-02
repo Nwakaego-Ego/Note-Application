@@ -28,7 +28,7 @@ const Test = () => {
   };
 
   const schema = yup.object().shape({
-    email: yup.string().email().required("email cannot be empty"),
+    email: yup.string().required("email cannot be empty").email(),
     password: yup
       .string()
       .max(10, "Words should be 10 max")
@@ -73,7 +73,7 @@ const Test = () => {
             name="password"
             id="password"
             type={showPassword ? "text" : "password"}
-            className="login-email-input"
+            className="login-email-input "
           />
           <div className="error-message">
             <ErrorMessage name="password">{(msg) => msg}</ErrorMessage>

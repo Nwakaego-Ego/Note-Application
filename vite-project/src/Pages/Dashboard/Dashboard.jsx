@@ -36,7 +36,6 @@ function Dashboard() {
   const saveNote = () => {
     if (note === "") {
       setError("the input box cannot be empty");
-      return;
     }
     setNotes([...notes, { id: notes.length + 1, name: "Jibola", note: note }]);
     setError("");
