@@ -97,8 +97,9 @@ const Test = () => {
               {showPassword ? "Hide" : "Show Password"}
             </label>
 
-            <button className="login-button" type="submit" disabled={!isValid}>
-              Login into your account
+            <button class="w-full h-12 bg-teal-500 rounded-lg font-normal text-base leading-5 text-white border border-transparent">
+              {" "}
+              type="submit" disabled={!isValid}> Login into your account
             </button>
           </div>
         </Form>
