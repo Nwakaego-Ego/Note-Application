@@ -49,20 +49,26 @@ const Test = () => {
       {({ isValid, dirty }) => (
         <Form>
           <div className="login-email">
-            <label htmlFor="email">Email</label>
+            <div class="lg:inline-block lg:mr-4">
+              <label for="email" class="block mb-2 lg:mb-0">
+                Email
+              </label>
+            </div>
+
             <Field
               name="email"
               id="email"
               type="text"
-              className="login-email-input"
+              class="lg:w-full w-80 h-12 bg-[#ececec] rounded-lg pl-4 border border-transparent mt-5 mb-5"
             />
+
             <div className="error-message">
               <ErrorMessage name="email">{(msg) => msg}</ErrorMessage>
             </div>
           </div>
           <div className="signup-password-forget">
             <label for="password">Password</label>
-            <span className="login-forget-password">
+            <span className="flex ">
               <Link to="/forgetpassword" className="signup-link">
                 {" "}
                 Forget Password
@@ -73,7 +79,7 @@ const Test = () => {
             name="password"
             id="password"
             type={showPassword ? "text" : "password"}
-            className="login-email-input "
+            class="lg:w-full w-80 h-12 bg-[#ececec] rounded-lg pl-4 border border-transparent mt-5 mb-5"
           />
           <div className="error-message">
             <ErrorMessage name="password">{(msg) => msg}</ErrorMessage>
