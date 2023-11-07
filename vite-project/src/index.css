@@ -34,7 +34,7 @@
   margin-bottom: 11px;
 }
 
-.login-email-input {
+/* .login-email-input {
   width: 100%;
   height: 50px;
   background: #ececec;
@@ -43,7 +43,7 @@
   border: 1px solid transparent;
   margin-top: 20px;
   margin-bottom: 20px;
-}
+} */
 
 .password {
   display: flex;
@@ -82,7 +82,7 @@
   color: #414141;
 }
 
-.login-button {
+/* .login-button {
   width: 100%;
   height: 50px;
   background: #4e9d9a;
@@ -92,7 +92,7 @@
   line-height: 21px;
   color: #ffffff;
   border: 1px solid transparent;
-}
+} */
 
 .login-link {
   text-decoration: none;
@@ -111,7 +111,6 @@
 .login-sign-up {
   color: #4e9d9a;
 }
-
 
 .signup-password-forget {
   display: flex;

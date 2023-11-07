@@ -66,10 +66,10 @@ const Test = () => {
               <ErrorMessage name="email">{(msg) => msg}</ErrorMessage>
             </div>
           </div>
-          <div className="signup-password-forget">
+          <div className="flex lg:justify-between ">
             <label for="password">Password</label>
-            <span className="flex ">
-              <Link to="/forgetpassword" className="signup-link">
+            <span className="flex justify-between">
+              <Link to="/forgetpassword" className="signup-link ml-24 lg:ml-1">
                 {" "}
                 Forget Password
               </Link>
@@ -92,15 +92,20 @@ const Test = () => {
               className="login-checkbox-input"
               onClick={showMyPassword}
             />
+
             <label for="checkbox" className="checkbox">
               {" "}
               {showPassword ? "Hide" : "Show Password"}
             </label>
-
-            <button class="w-full h-12 bg-teal-500 rounded-lg font-normal text-base leading-5 text-white border border-transparent">
-              {" "}
-              type="submit" disabled={!isValid}> Login into your account
-            </button>
+            <div class=" lg:mr-4">
+              <button
+                type="submit"
+                disabled={!isValid}
+                class="lg:w-full w-80  h-12 bg-teal-500 rounded-lg font-normal text-base leading-5 text-white border border-transparent"
+              >
+                Login into your account
+              </button>
+            </div>
           </div>
         </Form>
       )}
