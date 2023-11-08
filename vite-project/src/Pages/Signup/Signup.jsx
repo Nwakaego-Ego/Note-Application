@@ -56,7 +56,7 @@ function Signup() {
       <div className="navbar">
         <h3>Diary</h3>
         <div className="navbtn">
-          <button className="signout login-signin" onClick={signinPage}>
+          <button className="signout " onClick={signinPage}>
             <Link to="/" className="login-link">
               {" "}
               Sign in
@@ -69,7 +69,7 @@ function Signup() {
           <SignInImage />
         </div>
         <div className="signup-register">
-          <div className="login-form-section signup-form-section">
+          <div className="login-form-section signup-form-section ">
             <div className="login-sign-in">Register</div>
             <p className="login-question">
               Create an account to start using diary
@@ -86,24 +86,32 @@ function Signup() {
                 <Form className="login-form">
                   <div className="login-email">
                     <div>
-                      <label htmlFor="fullname">Full name</label>
+                      <div class="lg:inline-block lg:mr-4">
+                        <label htmlFor="fullname">Full name</label>
+                      </div>
+
                       <Field
                         name="name"
                         id="name"
                         type="text"
-                        className="login-email-input fullname"
+                        // className="login-email-input fullname"
+                        class="lg:w-full w-80 h-12 bg-[#ececec] rounded-lg pl-4 border border-transparent mt-5 mb-5 outline-none"
                       />
                       <div className="error-message">
                         <ErrorMessage name="name">{(msg) => msg}</ErrorMessage>
                       </div>
                     </div>
                     <div className="login-email">
-                      <label htmlFor="email">Email</label>
+                      <div class="lg:inline-block lg:mr-4">
+                        <label htmlFor="email">Email</label>
+                      </div>
+
                       <Field
                         name="email"
                         id="email"
                         type="text"
-                        className="login-email-input"
+                        // className="login-email-input"
+                        class="lg:w-full w-80 h-12 bg-[#ececec] rounded-lg pl-4 border border-transparent mt-5 mb-5 outline-none"
                       />
                       <div className="error-message">
                         <ErrorMessage name="email">{(msg) => msg}</ErrorMessage>
@@ -111,10 +119,13 @@ function Signup() {
                     </div>
 
                     <div>
-                      <div className="signup-password-forget">
+                      <div className="flex lg:justify-between ">
                         <label for="password">Password</label>
-                        <span className="login-forget-password">
-                          <Link to="/forgetpassword" className="signup-link">
+                        <span className="flex justify-between">
+                          <Link
+                            to="/forgetpassword"
+                            className="signup-link ml-[80px] lg:ml-1"
+                          >
                             {" "}
                             Forget Password
                           </Link>
@@ -124,7 +135,9 @@ function Signup() {
                         name="password"
                         id="password"
                         type={showPassword ? "text" : "password"}
-                        className="login-email-input"
+                        // className="login-email-input"
+                        class="lg:w-full w-80 h-12 bg-[#ececec] rounded-lg pl-4 border border-transparent
+                         mt-5 mb-5 outline-none"
                       />
 
                       <div className="error-message">
@@ -159,10 +172,10 @@ function Signup() {
               )}
             </Formik>
 
-            <div className="text-red-600">
+            <div className=" relative bottom-20 text-sm">
               <p className="">
                 Already own an account ?{" "}
-                <span className="">
+                <span className="text-[#4e9d9a] mb-30">
                   <Link to="/" className="">
                     Sign in
                   </Link>

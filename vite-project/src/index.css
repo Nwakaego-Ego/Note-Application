@@ -10,6 +10,12 @@
   padding: 60px;
 }
 
+@media screen and (max-width: 768px) {
+  .login-form-section {
+    width: 420px;
+  }
+}
+
 .login-sign-in {
   font-family: "Poppins";
   font-weight: 600;
