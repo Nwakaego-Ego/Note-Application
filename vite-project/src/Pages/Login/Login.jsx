@@ -21,7 +21,7 @@ const Login = () => {
         </div>
       </div>
       <div></div>
-      <div className="login-main-page">
+      <div className="">
         <div>
           <div className="login-main">
             <div className="login-img hidden lg:block">

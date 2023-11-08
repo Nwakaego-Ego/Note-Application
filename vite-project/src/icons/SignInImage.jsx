@@ -1,6 +1,6 @@
 function SignInImage() {
   return (
-    <div>
+    <div className="hidden lg:block">
       <svg
         width="473"
         height="328"

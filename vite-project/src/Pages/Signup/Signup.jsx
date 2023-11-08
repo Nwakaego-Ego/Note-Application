@@ -159,14 +159,16 @@ function Signup() {
               )}
             </Formik>
 
-            <p className="login-account">
-              Already own an account ?{" "}
-              <span className="login-sign-up">
-                <Link to="/" className="signup-link">
-                  Sign in
-                </Link>
-              </span>{" "}
-            </p>
+            <div className="text-red-600">
+              <p className="">
+                Already own an account ?{" "}
+                <span className="">
+                  <Link to="/" className="">
+                    Sign in
+                  </Link>
+                </span>{" "}
+              </p>
+            </div>
           </div>
         </div>
       </div>
